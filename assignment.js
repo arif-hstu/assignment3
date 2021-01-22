@@ -11,7 +11,7 @@ function kilometerToMeter(kilometer) {
 
         return meter;
 
-    } else { 
+    } else {
         //if invalid input found
         var errorText = 'Please input a valid number.';
         return errorText;
@@ -87,30 +87,44 @@ function hotelCost(days) {
 function megaFriend(friendsArray) {
     // defining the variables
     var largeNameIndex = 0;
-    var name = '';
+    var result = '';
 
-    // iteration of the array 
-    for (var i = 0; i < friendsArray.length; i++) {
-        // defining the variables
-        var arrayValue = friendsArray[i];
-        // checking if the inputs are valid string
-        if (typeof arrayValue === 'string') {
-            if (largeNameIndex < friendsArray[i].length) {
-                largeNameIndex = friendsArray[i].length;
-                name = friendsArray[i];
-            }
-
+    if(Array.isArray(friendsArray)) {
+        if (friendsArray === undefined || friendsArray.length == 0) {
+            // checking if the array is undefined or empty 
+            result = 'Your Array is empty. Please input some Names.';
+        } else if (friendsArray.length == 1) {
+            // checking if the array has only one input.
+            result = 'You have used only one input. Please input two or more Names to compare.'
         } else {
-            // assigning error message to the variable, if invalid input found
-            name = 'You have used invalid Name(s) in the Array. Please input valid Name.';
-            break;
+            // iteration of the array 
+            for (var i = 0; i < friendsArray.length; i++) {
+                // defining the variable
+                var arrayValue = friendsArray[i];
+                // checking if the inputs are valid strings
+                if (typeof arrayValue === 'string') {
+                    if (largeNameIndex < friendsArray[i].length) {
+                        largeNameIndex = friendsArray[i].length;
+                        result = friendsArray[i];
+                    }
+    
+                } else {
+                    // assigning error message to the variable, if invalid input found
+                    result = 'You have used invalid Name(s) in the Array. Please input valid Name(s).';
+                    break;
+                }
+            }   
         }
+ 
+    } else {
+        result = 'You have not used an Array. Please input an Array of Names.'
     }
 
-    return name;
+   
+    return result;
 }
 
 // console.log(kilometerToMeter(2));
 // console.log(budgetCalculator(1,2,50));
 // console.log(hotelCost(12));
-// console.log(megaFriend(['arif','rere','fdsa','reerfdfg','fdsafed','grewradafd','fdferea','vdfer','rerer','arewfew','fdrae','arifarifarifarifarifarif',12,]));
+// console.log(megaFriend(['arif', 'reier', 'kamal', 'jamialfdfdfdf']));

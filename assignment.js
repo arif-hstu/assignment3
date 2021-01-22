@@ -1,6 +1,4 @@
-// github link will be here
-
-
+// https://github.com/arif-hstu/assignment3
 
 function kilometerToMeter(kilometer) {
     //checking if the input is a valid number
@@ -19,8 +17,6 @@ function kilometerToMeter(kilometer) {
         return errorText;
     }
 }
-
-
 
 function budgetCalculator(clock, phone, laptop) {
     //checking if the inputs are valid numbers
@@ -51,7 +47,6 @@ function budgetCalculator(clock, phone, laptop) {
         return errorText;
     }
 }
-
 
 function hotelCost(days) {
     //checking if the inputs are valid number
@@ -88,7 +83,6 @@ function hotelCost(days) {
         return errorText;
     }
 }
-
 
 function megaFriend(friendsArray) {
     // defining the variables

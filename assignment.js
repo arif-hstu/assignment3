@@ -50,7 +50,7 @@ function budgetCalculator(clock, phone, laptop) {
 
 
 function hotelCost(days) {
-    
+    //checking if the inputs are valid number
     if (isNaN(days) !== true && days > 0) {
         // defining the variables
         var firstCost = 0;
@@ -80,6 +80,7 @@ function hotelCost(days) {
         
         } else {
             var errorText = 'Please input valid day(s)';
+            
             return errorText;
         }
     
@@ -88,17 +89,26 @@ function hotelCost(days) {
 
 function megaFriend(friendsArray) {
     // defining the variables
-    var temp = 0;
-
+    var largeNameIndex = 0;
+    var name = '';
+    // iteration of the array 
     for(var i = 0; i < friendsArray.length; i++) {
-        if (temp < friendsArray[i].length) {
-            temp = friendsArray[i].length;
-            var name = friendsArray[i];
+        // defining the variables
+        var arrayValue = friendsArray[i];
+        // checking if the inputs are valid string
+        if(typeof arrayValue === 'string') {
+            if (largeNameIndex < friendsArray[i].length) {
+                largeNameIndex = friendsArray[i].length;
+                name = friendsArray[i];
+            } 
+        } else {
+            // assigning error message to the variable
+            name = 'You have used invalid Name(s) in the Array. Please input valid Name.';
         }
     }
 
     return name;
+    
 }
 
 
-console.log(hotelCost(0));

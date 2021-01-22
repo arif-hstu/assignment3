@@ -15,13 +15,15 @@ function kilometerToMeter(kilometer) {
 
     } else { 
         //if invalid input found
-        var errorText = 'Please input valid number(s)';
+        var errorText = 'Please input a valid number.';
         return errorText;
     }
 }
 
+
+
 function budgetCalculator(clock, phone, laptop) {
-    //checking if the inputs are valid number
+    //checking if the inputs are valid numbers
     if (isNaN(clock) !== true && clock > 0 && isNaN(phone) !== true && phone > 0 && isNaN(laptop) !== true && laptop > 0) {
         // defining the variables
         var clockPrice = 0;
@@ -53,7 +55,7 @@ function budgetCalculator(clock, phone, laptop) {
 
 function hotelCost(days) {
     //checking if the inputs are valid number
-    if (isNaN(days) !== true && days > 0) {
+    if (isNaN(days) !== true && days >= 0) {
         // defining the variables
         var firstCost = 0;
         var secondCost = 0;
@@ -85,7 +87,6 @@ function hotelCost(days) {
         var errorText = 'Please input valid day(s)';
         return errorText;
     }
-
 }
 
 
@@ -108,9 +109,14 @@ function megaFriend(friendsArray) {
         } else {
             // assigning error message to the variable, if invalid input found
             name = 'You have used invalid Name(s) in the Array. Please input valid Name.';
+            break;
         }
     }
 
     return name;
-
 }
+
+// console.log(kilometerToMeter(2));
+// console.log(budgetCalculator(1,2,50));
+// console.log(hotelCost(12));
+// console.log(megaFriend(['arif','rere','fdsa','reerfdfg','fdsafed','grewradafd','fdferea','vdfer','rerer','arewfew','fdrae','arifarifarifarifarifarif',12,]));
